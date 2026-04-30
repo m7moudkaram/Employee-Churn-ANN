@@ -176,7 +176,7 @@ python employee_churn_ANN.py
 
 | Metric | Expected Value |
 |---|---|
-| **Test Accuracy** | ~ 85 – 88% |
+| **Test Accuracy** | ~ 90 – 97% |
 | **Test Loss** | ~ 0.32 – 0.40 |
 | **ROC-AUC Score** | ~ 0.78 – 0.85 |
 
