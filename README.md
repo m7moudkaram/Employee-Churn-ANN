@@ -14,20 +14,6 @@
 </p>
 
 ---
-
-## Table of Contents
-
-- [Project Overview](#-project-overview)
-- [Dataset Description](#-dataset-description)
-- [Project Structure](#-project-structure)
-- [Model Architecture](#-model-architecture)
-- [Installation & Usage](#-installation--usage)
-- [Expected Results](#-expected-results)
-- [Key Design Decisions](#-key-design-decisions)
-- [Author](#-author)
-
----
-
 ## Project Overview
 
 Employee churn is one of the costliest challenges in human resource management. This project builds a complete end-to-end machine learning pipeline to **predict which employees are likely to leave the company**, enabling HR departments to take proactive retention decisions.
