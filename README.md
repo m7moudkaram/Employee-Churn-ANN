@@ -1,4 +1,4 @@
-# 🧠 Employee Churn Prediction using ANN
+# Employee Churn Prediction using ANN
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white"/>
@@ -15,7 +15,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Dataset Description](#-dataset-description)
@@ -28,7 +28,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Employee churn is one of the costliest challenges in human resource management. This project builds a complete end-to-end machine learning pipeline to **predict which employees are likely to leave the company**, enabling HR departments to take proactive retention decisions.
 
@@ -36,15 +36,15 @@ Employee churn is one of the costliest challenges in human resource management. 
 
 | Step | Description |
 |---|---|
-| 🔗 **Data Merging** | Load and join 3 CSV files on `EmployeeID` |
-| 🔍 **EDA** | Visualize distributions, correlations, and class imbalance |
-| ⚙️ **Preprocessing** | Encode, scale, handle missing values & class imbalance |
-| 🏗️ **Model** | Deep ANN with Dropout regularization |
-| 📊 **Evaluation** | Accuracy, Loss curves, Confusion Matrix, ROC-AUC |
+| **Data Merging** | Load and join 3 CSV files on `EmployeeID` |
+| **EDA** | Visualize distributions, correlations, and class imbalance |
+| **Preprocessing** | Encode, scale, handle missing values & class imbalance |
+| **Model** | Deep ANN with Dropout regularization |
+| **Evaluation** | Accuracy, Loss curves, Confusion Matrix, ROC-AUC |
 
 ---
 
-## 📂 Dataset Description
+## Dataset Description
 
 **Source:** [HR Analytics Case Study — Kaggle](https://www.kaggle.com/datasets/vjchoudhary7/hr-analytics-case-study)
 
@@ -56,7 +56,7 @@ The dataset contains **4,410 employee records** distributed across multiple CSV 
 | `employee_survey_data.csv` | 4 | EnvironmentSatisfaction, JobSatisfaction, WorkLifeBalance |
 | `manager_survey_data.csv` | 3 | JobInvolvement, PerformanceRating |
 
-### ⚠️ Known Data Issues (handled in code)
+### Known Data Issues (handled in code)
 
 | Column | Issue | Fix Applied |
 |---|---|---|
@@ -66,7 +66,7 @@ The dataset contains **4,410 employee records** distributed across multiple CSV 
 | `JobSatisfaction` | 20 missing values | Filled with **median** |
 | `WorkLifeBalance` | 38 missing values | Filled with **median** |
 
-### 🎯 Target Variable — Attrition
+### Target Variable — Attrition
 
 ```
 No  (stayed) : 3,699 employees — 83.9%
@@ -76,20 +76,20 @@ Imbalance ratio: ~5.2×  →  handled via class_weight='balanced'
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 employee-churn-ann/
 │
-├── 📄 employee_churn_ANN.py          # Main pipeline script (Colab-ready)
-├── 📄 README.md                      # This file
+├──  employee_churn_ANN.py          # Main pipeline script (Colab-ready)
+├──  README.md                      # This file
 │
-├── 📂 data/                          # Place your CSV files here
+├──  data/                          # Place your CSV files here
 │   ├── general_data.csv
 │   ├── employee_survey_data.csv
 │   └── manager_survey_data.csv
 │
-└── 📂 outputs/                       # Auto-generated after running
+└──  outputs/                       # Auto-generated after running
     ├── employee_churn_ann_model.keras
     ├── attrition_distribution.png
     ├── correlation_heatmap.png
@@ -101,7 +101,7 @@ employee-churn-ann/
 
 ---
 
-## 🏗️ Model Architecture
+## Model Architecture
 
 The ANN is built using the **TensorFlow / Keras Sequential API**.
 
@@ -134,11 +134,11 @@ The ANN is built using the **TensorFlow / Keras Sequential API**.
 
 ---
 
-## 🚀 Installation & Usage
+## Installation & Usage
 
-### ▶️ Option 1 — Google Colab (Recommended)
+### Option 1 — Google Colab (Recommended)
 
-> ✅ No installation needed. TensorFlow, pandas, and scikit-learn are pre-installed in Colab.
+> No installation needed. TensorFlow, pandas, and scikit-learn are pre-installed in Colab.
 
 **Step 1** — Open [Google Colab](https://colab.research.google.com) and create a new notebook.
 
@@ -159,7 +159,7 @@ Right-click any file → **Download** to save it locally.
 
 ---
 
-### 💻 Option 2 — Run Locally
+### Option 2 — Run Locally
 
 **Requirements:** Python 3.9+
 
@@ -182,7 +182,7 @@ python employee_churn_ANN.py
 
 ---
 
-## 📊 Expected Results
+## Expected Results
 
 > Results may vary slightly due to random seed and hardware differences.
 
@@ -204,10 +204,10 @@ python employee_churn_ANN.py
 
 | Cell | Name | Meaning |
 |---|---|---|
-| ✅ Top-left | True Negative (TN) | Correctly predicted employee stays |
-| ✅ Bottom-right | True Positive (TP) | Churner correctly caught |
-| ⚠️ Bottom-left | False Negative (FN) | Missed churner — most costly HR error |
-| ℹ️ Top-right | False Positive (FP) | False alarm — flagged but stayed |
+| Top-left | True Negative (TN) | Correctly predicted employee stays |
+| Bottom-right | True Positive (TP) | Churner correctly caught |
+| Bottom-left | False Negative (FN) | Missed churner — most costly HR error |
+| Top-right | False Positive (FP) | False alarm — flagged but stayed |
 
 ### Classification Report (approximate)
 
@@ -221,7 +221,7 @@ No Attrition    0.89        0.97       0.93        740
 weighted avg    0.86        0.87       0.86        882
 ```
 
-> 💡 **Key metric to watch:** The **Recall** score for `Attrition = Yes`.
+> **Key metric to watch:** The **Recall** score for `Attrition = Yes`.
 > A higher recall means fewer missed churners — the primary business objective.
 > Consider lowering the decision threshold from `0.5 → 0.35` to improve recall if needed.
 
@@ -233,7 +233,7 @@ The model typically converges within **30 – 50 epochs** before early stopping 
 
 ---
 
-## 🔑 Key Design Decisions
+## Key Design Decisions
 
 | Decision | Why |
 |---|---|
@@ -247,12 +247,12 @@ The model typically converges within **30 – 50 epochs** before early stopping 
 
 ---
 
-## 👥 Author
+## Author
 
 <table>
   <tr>
     <td align="center">
-      <b>🌿 Greenland Team</b><br/><br/>
+      <b> Greenland Team</b><br/><br/>
       Faculty of Artificial Intelligence<br/>
       Kafrelsheikh University, Egypt<br/><br/>
       <i>Neural Networks Course Project</i>
