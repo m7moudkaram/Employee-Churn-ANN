@@ -247,4 +247,3 @@ The model typically converges within **30 – 50 epochs** before early stopping 
 </table>
 
 ---
-<p align="center">Made with ❤️ by the Greenland Team — Kafrelsheikh University</p>
